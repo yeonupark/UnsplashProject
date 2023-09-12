@@ -19,7 +19,7 @@ class PhotoViewController: UIViewController {
 
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.rowHeight = 100
         viewModel.fetchPhoto()
         
         viewModel.photoList.bind { _ in
@@ -42,6 +42,16 @@ extension PhotoViewController: UITableViewDelegate, UITableViewDataSource {
         let data = viewModel.cellForRowAt(at: indexPath)
         
         cell.backgroundColor = .systemPink
+        
+        guard let url = URL(string: data.urls.thumb) else { return UITableViewCell() }
+        
+        DispatchQueue.global().async {
+            let photoData = try! Data(contentsOf: url)
+            
+            DispatchQueue.main.async {
+                cell.imageView?.image = UIImage(data: photoData)
+            }
+        }
         
         return cell
     }

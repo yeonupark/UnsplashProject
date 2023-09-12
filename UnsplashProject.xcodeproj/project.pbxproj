@@ -108,8 +108,8 @@
 		48EA26BC2AAFF01900839012 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				48EA26BD2AAFF03100839012 /* LoginViewController.swift */,
 				48EA26BF2AAFF30000839012 /* Observable.swift */,
+				48EA26BD2AAFF03100839012 /* LoginViewController.swift */,
 				48EA26C12AAFFDF700839012 /* SampleViewController.swift */,
 				48EA26C32AB0015B00839012 /* SampleViewModel.swift */,
 				48EA26C52AB00E4500839012 /* LoginViewModel.swift */,
