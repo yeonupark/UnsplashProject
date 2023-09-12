@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  UnsplashProject
+
+  Created by 마르 on 2023/09/11.
+  
+*/
+
+//  설정 탭
+"nickname_placeholder" = "닉네임 입력";
+
+"nickname_result" = "당신의 닉네임은 %@입니다.";
+
+"age_result" = "당신의 나이는 %d살입니다.";
+
+// 얼럿 탭

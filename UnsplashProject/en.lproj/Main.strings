@@ -1,0 +1,29 @@
+
+/* Class = "UITextField"; placeholder = "아이디를 입력해주세요"; ObjectID = "62G-CQ-ghx"; */
+"62G-CQ-ghx.placeholder" = "Enter ID";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "8KT-Q1-k9K"; */
+"8KT-Q1-k9K.title" = "Item";
+
+/* Class = "UILabel"; text = "로그인 여부 확인"; ObjectID = "K7U-Ep-T0Y"; */
+"K7U-Ep-T0Y.text" = "Check if Logined";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "bHw-yI-5rR"; */
+"bHw-yI-5rR.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "비밀번호를 입력해주세요"; ObjectID = "cR5-JS-NvP"; */
+"cR5-JS-NvP.placeholder" = "Enter Password";
+
+/* Class = "UIButton"; configuration.title = "로그인"; ObjectID = "ftf-Qt-J0c"; */
+"ftf-Qt-J0c.configuration.title" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ftf-Qt-J0c"; */
+"ftf-Qt-J0c.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "로그인"; ObjectID = "tmA-lP-RZU"; */
+"tmA-lP-RZU.title" = "Login";
+
+/* Class = "UINavigationItem"; title = "사진 검색"; ObjectID = "zJP-sL-rxN"; */
+"zJP-sL-rxN.title" = "Search Photo";
+
+"oDz-ca-6L5.title" = "Apple"

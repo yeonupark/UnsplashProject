@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  UnsplashProject
+
+  Created by 마르 on 2023/09/11.
+  
+*/
+
+"nickname_placeholder" = "ingresa el apodo";
+
+"alert_cancel" = "cancelar alarma";
