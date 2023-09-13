@@ -48,7 +48,6 @@ class CaculateViewController: UIViewController {
     @objc func secondTextFieldChanged() {
         viewModel.secondNumber.value = secondTextField.text
         viewModel.calculate()
-        viewModel.presentNumberFormat()
     }
 
 }
