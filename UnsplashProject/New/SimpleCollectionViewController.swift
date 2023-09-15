@@ -22,7 +22,7 @@ class SimpleCollectionViewController: UIViewController {
     
     var collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: createLayout())
     
-    var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
+    //var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
     
     var datasouce: UICollectionViewDiffableDataSource<String, User>!
     
@@ -36,15 +36,29 @@ class SimpleCollectionViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        datasouce = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
-            
-            // cellForItamAt
-            let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: itemIdentifier)
-            return cell
-        })
+        var snapshot = NSDiffableDataSourceSnapshot<String, User>()
+        
+        snapshot.appendSections(["영화","사람"])
+        
+        snapshot.appendItems(list1, toSection: "사람")
+        snapshot.appendItems(list2, toSection: "영화")
+        
+        datasouce.apply(snapshot)
+        
+    }
+    
+    static private func createLayout() -> UICollectionViewLayout {
+        var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        configuration.showsSeparators = false
+        configuration.backgroundColor = .black
+        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        return layout
+    }
+    
+    private func configureDataSource() {
         
         // UICollectionView.CellRegistration -> iOS 14 이상, 메서드 대신 제네릭을 사용, 셀이 생성될 때마다 클로저가 호출됨 !
-        cellRegistration = UICollectionView.CellRegistration(handler: { cell, indexPath, itemIdentifier in
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, User>(handler: { cell, indexPath, itemIdentifier in
             
             // 셀 디자인 및 데이터 처리
             //var content = cell.defaultContentConfiguration()
@@ -67,23 +81,12 @@ class SimpleCollectionViewController: UIViewController {
             
         })
         
-        var snapshot = NSDiffableDataSourceSnapshot<String, User>()
-        
-        snapshot.appendSections(["영화","사람"])
-        
-        snapshot.appendItems(list1, toSection: "사람")
-        snapshot.appendItems(list2, toSection: "영화")
-        
-        datasouce.apply(snapshot)
-        
-    }
-    
-    static func createLayout() -> UICollectionViewLayout {
-        var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        configuration.showsSeparators = false
-        configuration.backgroundColor = .black
-        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
-        return layout
+        datasouce = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            
+            // cellForItamAt
+            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
     }
 }
 
