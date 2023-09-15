@@ -7,9 +7,11 @@
 
 import UIKit
 
-struct User {
+struct User: Hashable {
     let name: String
     let age: Int
+    
+    let id = UUID().uuidString // unique. name이랑 age가 같더라도 문제가 생기지 않게 처리해줌
     
     var introduce: String {
         return "\(name), \(age)살"

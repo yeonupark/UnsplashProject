@@ -11,22 +11,37 @@ import SnapKit
 private let reuseIdentifier = "Cell"
 
 class SimpleCollectionViewController: UIViewController {
+    
+    enum Section: Int, CaseIterable {
+        case movie = 2000
+        case actor = 1
+    }
 
-    var list = [User(name: "Hue", age: 23), User(name: "Jack", age: 21), User(name: "Bran", age: 20), User(name: "Kokojong", age: 20)]
+    var list1 = [User(name: "Hue", age: 23), User(name: "Hue", age: 23), User(name: "Bran", age: 20), User(name: "Kokojong", age: 20)]
+    var list2 = [User(name: "기생충", age: 2019), User(name: "스파이더맨", age: 2023), User(name: "겨울왕국", age: 2010), User(name: "인셉션", age: 2007)]
     
     var collectionView = UICollectionView(frame: CGRect(), collectionViewLayout: createLayout())
     
     var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
     
+    var datasouce: UICollectionViewDiffableDataSource<String, User>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.addSubview(collectionView)
-        collectionView.delegate = self
-        collectionView.dataSource = self
+//        collectionView.delegate = self
+//        collectionView.dataSource = self
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        datasouce = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            
+            // cellForItamAt
+            let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
         
         // UICollectionView.CellRegistration -> iOS 14 이상, 메서드 대신 제네릭을 사용, 셀이 생성될 때마다 클로저가 호출됨 !
         cellRegistration = UICollectionView.CellRegistration(handler: { cell, indexPath, itemIdentifier in
@@ -51,6 +66,16 @@ class SimpleCollectionViewController: UIViewController {
             cell.backgroundConfiguration = backgroundConfig
             
         })
+        
+        var snapshot = NSDiffableDataSourceSnapshot<String, User>()
+        
+        snapshot.appendSections(["영화","사람"])
+        
+        snapshot.appendItems(list1, toSection: "사람")
+        snapshot.appendItems(list2, toSection: "영화")
+        
+        datasouce.apply(snapshot)
+        
     }
     
     static func createLayout() -> UICollectionViewLayout {
@@ -62,6 +87,7 @@ class SimpleCollectionViewController: UIViewController {
     }
 }
 
+/*
 extension SimpleCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -76,3 +102,4 @@ extension SimpleCollectionViewController: UICollectionViewDelegate, UICollection
         return cell
     }
 }
+*/
