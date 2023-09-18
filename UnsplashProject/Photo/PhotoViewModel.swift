@@ -13,14 +13,15 @@ class PhotoViewModel {
     // observable - 데이터가 바뀔 때 마다 항상 캐치해서 처리해줌
     var photoList = Observable(Photo(total: 0, total_pages: 0, results: []))
     
-    func fetchPhoto() {
+    func fetchPhoto(text: String) {
         
-        PhotoAPIService.shared.searchPhoto(query: "cat") { photo in
-            guard let photo = photo else {
-                return
+        PhotoAPIService.shared.searchPhoto(query: text) { photo in
+            DispatchQueue.main.async {
+                guard let photo = photo else {
+                    return
+                }
+                self.photoList.value = photo
             }
-            self.photoList.value = photo
-            
         }
     }
     

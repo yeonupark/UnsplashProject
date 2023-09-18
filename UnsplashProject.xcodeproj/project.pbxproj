@@ -39,6 +39,7 @@
 		48EA26E02AB1A20400839012 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA26DF2AB1A20400839012 /* LottoViewController.swift */; };
 		48EA26E22AB1A60200839012 /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA26E12AB1A60200839012 /* LottoViewModel.swift */; };
 		48EA26E42AB1A65F00839012 /* LottoObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EA26E32AB1A65F00839012 /* LottoObservable.swift */; };
+		48FD44DA2AB7D39F00F5CBA8 /* NumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FD44D92AB7D39F00F5CBA8 /* NumberViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		48EA26DF2AB1A20400839012 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		48EA26E12AB1A60200839012 /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
 		48EA26E32AB1A65F00839012 /* LottoObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoObservable.swift; sourceTree = "<group>"; };
+		48FD44D92AB7D39F00F5CBA8 /* NumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				48EA26C12AAFFDF700839012 /* SampleViewController.swift */,
 				48EA26C32AB0015B00839012 /* SampleViewModel.swift */,
 				48EA26C52AB00E4500839012 /* LoginViewModel.swift */,
+				48FD44D92AB7D39F00F5CBA8 /* NumberViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				48C69A012AAE9910005AD380 /* SceneDelegate.swift in Sources */,
 				48EA26C42AB0015B00839012 /* SampleViewModel.swift in Sources */,
 				48EA26CF2AB02DA600839012 /* PhotoViewModel.swift in Sources */,
+				48FD44DA2AB7D39F00F5CBA8 /* NumberViewController.swift in Sources */,
 				48EA26C22AAFFDF700839012 /* SampleViewController.swift in Sources */,
 				48EA26C62AB00E4500839012 /* LoginViewModel.swift in Sources */,
 			);
